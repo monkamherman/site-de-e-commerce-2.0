@@ -1,41 +1,15 @@
-
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingCart, Heart, Search, Menu, User, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { ChevronRight } from "lucide-react";
+
+import Navbar from "@/components/Navbar";
+import HomeHeader from "@/components/HomeHeader";
+import NewProducts from "@/components/NewProducts";
+import FeatureHighlights from "@/components/FeatureHighlights";
+import PromotionBanner from "@/components/PromotionBanner";
 
 const Index = () => {
-  const [featuredProducts] = useState([
-    {
-      id: 1,
-      name: "Casque Audio Premium",
-      price: 199.99,
-      image: "/placeholder.svg",
-      category: "Audio"
-    },
-    {
-      id: 2,
-      name: "Montre Connectée Sport",
-      price: 249.99,
-      image: "/placeholder.svg",
-      category: "Accessoires"
-    },
-    {
-      id: 3,
-      name: "Enceinte Bluetooth Portable",
-      price: 89.99,
-      image: "/placeholder.svg",
-      category: "Audio"
-    },
-    {
-      id: 4,
-      name: "Écouteurs Sans Fil",
-      price: 129.99,
-      image: "/placeholder.svg",
-      category: "Audio"
-    }
-  ]);
-
   const categories = [
     { id: 1, name: "Audio", image: "/placeholder.svg" },
     { id: 2, name: "Smartphones", image: "/placeholder.svg" },
@@ -43,111 +17,27 @@ const Index = () => {
     { id: 4, name: "Accessoires", image: "/placeholder.svg" }
   ];
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header/Navigation */}
-      <header className="sticky top-0 bg-white z-10 shadow-sm">
-        <div className="container mx-auto p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-              <h1 className="text-xl font-bold">Worketyamo</h1>
-            </div>
-            
-            <div className="hidden md:flex items-center gap-6">
-              <a href="#" className="text-sm font-medium hover:text-primary">Accueil</a>
-              <a href="#" className="text-sm font-medium hover:text-primary">Produits</a>
-              <a href="#" className="text-sm font-medium hover:text-primary">Catégories</a>
-              <a href="#" className="text-sm font-medium hover:text-primary">Promotions</a>
-              <a href="#" className="text-sm font-medium hover:text-primary">Contact</a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon">
-                <Search className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <User className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Heart className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground rounded-full h-5 w-5 flex items-center justify-center text-xs">2</span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-indigo-100 py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Découvrez nos dernières technologies</h1>
-              <p className="text-lg text-gray-600 mb-6">
-                Des produits innovants pour améliorer votre quotidien
-              </p>
-              <Button className="px-8 py-6 text-lg">
-                Acheter maintenant <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-            <div className="md:w-1/2 flex justify-center">
-              <div className="w-full max-w-md h-64 md:h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">Image de produit à la une</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Produits à la Une</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <Card key={product.id} className="overflow-hidden">
-                <div className="aspect-square relative bg-gray-100">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="object-cover w-full h-full"
-                  />
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    className="absolute top-2 right-2 bg-white rounded-full hover:bg-gray-100"
-                  >
-                    <Heart className="h-5 w-5" />
-                  </Button>
-                </div>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <p className="text-sm text-gray-500">{product.category}</p>
-                      <CardTitle className="mt-1">{product.name}</CardTitle>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xl font-bold">{product.price.toFixed(2)} €</p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full">
-                    <ShoppingCart className="mr-2 h-4 w-4" /> Ajouter au panier
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <HomeHeader />
+      
+      {/* Feature Highlights */}
+      <FeatureHighlights />
+      
+      {/* New Products */}
+      <NewProducts />
+      
+      {/* Promotion Banner */}
+      <PromotionBanner />
+      
       {/* Categories */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
