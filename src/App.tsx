@@ -12,6 +12,8 @@ import Account from "./pages/Account";
 import Wishlist from "./pages/Wishlist";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Admin/Dashboard";
+import Promotion from "./pages/Promotion";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/account/*" element={<Account />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/promotions" element={<Promotion />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
