@@ -109,7 +109,7 @@ const Navbar = () => {
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
-            <Link to="/" className="text-xl font-bold">Worketyamo</Link>
+            <Link to="/" className="text-xl font-bold">godlove</Link>
           </div>
           
           {showSearch ? (
