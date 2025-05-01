@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Minus, Plus, ShoppingCart, Star, Truck } from "lucide-react";
 import { useState } from "react";
+import ReviewForm from "@/components/ReviewForm";
 
 const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
@@ -308,6 +309,9 @@ const ProductDetail = () => {
               </div>
 
               <Button>Voir tous les avis</Button>
+              
+              {/* Review Form */}
+              <ReviewForm productId={product.id} />
             </TabsContent>
           </Tabs>
         </div>
