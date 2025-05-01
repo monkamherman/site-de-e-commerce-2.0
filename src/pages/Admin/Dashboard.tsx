@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Package, Truck, Coupon } from "lucide-react";
+import { Calendar, Package, Truck, Tag } from "lucide-react";
 import ProductsTab from "@/components/admin/ProductsTab";
 import WholesaleTab from "@/components/admin/WholesaleTab";
 import PromotionsTab from "@/components/admin/PromotionsTab";
@@ -33,7 +33,7 @@ const Dashboard = () => {
             <span className="hidden sm:inline">Promotions</span>
           </TabsTrigger>
           <TabsTrigger value="coupons" className="flex items-center gap-2">
-            <Coupon size={18} />
+            <Tag size={18} />
             <span className="hidden sm:inline">Coupons</span>
           </TabsTrigger>
         </TabsList>
