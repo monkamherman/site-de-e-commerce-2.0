@@ -106,10 +106,10 @@ const Navbar = () => {
       <div className="container mx-auto p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon">
+            {/* <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
-            </Button>
-            <Link to="/" className="text-xl font-bold">godlove</Link>
+            </Button> */}
+            <Link to="/" className="text-xl font-bold">AKEZOU STORE</Link>
           </div>
           
           {showSearch ? (
@@ -231,3 +231,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// Test de modification

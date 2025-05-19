@@ -60,6 +60,28 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Structure des dépôts Git
+
+Ce projet utilise deux dépôts Git distincts :
+
+1. **Dépôt principal (origin)**
+   - URL: `git@github.com:monkamherman/site-de-e-commerce-2.0.git`
+   - Utilisé pour les modifications et le développement
+   - Commandes principales :
+     ```bash
+     git push origin main    # Envoyer les modifications
+     git pull origin main    # Récupérer les modifications
+     ```
+
+2. **Dépôt de données (upstream)**
+   - URL: `git@github.com:monkamherman/reveur-mecanique-secret.git`
+   - Utilisé pour les données et le fetch
+   - Commandes principales :
+     ```bash
+     git fetch upstream      # Récupérer les données
+     git pull upstream main  # Fusionner les données
+     ```
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/d01d98f7-f9e8-4874-ac44-8e384428e18f) and click on Share -> Publish.
