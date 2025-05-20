@@ -67,7 +67,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Newsletter
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
@@ -87,14 +87,14 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 py-16 mt-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-white text-lg font-bold mb-4">Worketyamo</h3>
+              <h3 className="text-white text-lg font-bold mb-4">AKEZOU STORE</h3>
               <p className="mb-4">La meilleure boutique pour tous vos besoins technologiques</p>
               <div className="flex gap-4">
                 <Button variant="ghost" size="icon" className="text-white hover:text-primary">
@@ -135,15 +135,15 @@ const Index = () => {
               <h4 className="text-white text-md font-bold mb-4">Contact</h4>
               <address className="not-italic">
                 <p className="mb-2">123 rue du Commerce</p>
-                <p className="mb-2">75000 Paris, France</p>
+                <p className="mb-2">75000 Douala, Cameroun</p>
                 <p className="mb-2">+33 1 23 45 67 89</p>
-                <p className="mb-2">contact@worketyamo.com</p>
+                <p className="mb-2">contact@akezoustore.com</p>
               </address>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
-            <p>© 2025 Worketyamo. Tous droits réservés.</p>
+            <p>© 2025 Akezou Store. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
